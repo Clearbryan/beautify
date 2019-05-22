@@ -1,4 +1,5 @@
 module.exports = function ensureAuthenticated (req, res, next){
-    if(req.isAuthenticated) return next();
-    res.status(401).redirect('/users/login');
+    const token = req.headers.authorization;
+    console.log(req)
+    next();    
 }

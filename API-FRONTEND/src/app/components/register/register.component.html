@@ -1,0 +1,24 @@
+<div class="row wrapper">
+  <div class="col-md-4 m-auto">
+    <form #f="ngForm" (ngSubmit)="onRegisterSubmit(f)" novalidate>
+    <div class="form-group">
+      <label for="fullname">Name</label>
+      <input class="form-control" type="text" ngModel name="fullname" placeholder="full name" ngModel required #fullname="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input class="form-control" type="email" ngModel name="email" placeholder="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input class="form-control" type="password" ngModel  name="password" placeholder="password" required>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm password</label>
+      <input class="form-control" type="password" ngModel name="confirmPassword" placeholder="confirm password">
+    </div>
+    <input type="button" class="btn btn-primary btn-block" value="Register">
+    <small class="text-center"><p>By clicking register you agree to Beautify's <a [routerLink]="['/routePath']">Terms & Conditions</a></p></small>
+    </form>
+  </div>
+</div>

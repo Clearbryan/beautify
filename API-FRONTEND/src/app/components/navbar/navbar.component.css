@@ -1,0 +1,13 @@
+.navbar {
+    padding-bottom: px !important;
+    font-size: 17px !important;
+    height: 70px !important;
+}
+.navbar-brand {
+    font-size: 30px !important;
+    font-family: "comic sans MS" !important;
+    margin-left: 70px !important;
+}
+.collapse {
+    margin-right: 70px !important;
+}
