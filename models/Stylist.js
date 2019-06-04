@@ -26,7 +26,7 @@ const stylistSchema = mongoose.Schema({
             // required: true
         }
     }
-});
+}, { strict: false });
 
 // exports the stylist model
 const Stylist = module.exports = mongoose.model('Stylist', stylistSchema);

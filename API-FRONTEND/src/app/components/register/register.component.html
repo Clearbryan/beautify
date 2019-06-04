@@ -1,23 +1,28 @@
 <div class="row wrapper">
   <div class="col-md-4 m-auto">
-    <form #f="ngForm" (ngSubmit)="onRegisterSubmit(f)" novalidate>
+    <form #registerForm="ngForm" (ngSubmit)="onRegisterSubmit(registerForm)">
     <div class="form-group">
       <label for="fullname">Name</label>
-      <input class="form-control" type="text" ngModel name="fullname" placeholder="full name" ngModel required #fullname="ngModel">
+      <input class="form-control" [(ngModel)] ="name" type="text" name="fullname" placeholder="full name" ngModel required #fullname="ngModel">
+      <div *ngIf="fullname.touched && !fullname"></div>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input class="form-control" type="email" ngModel name="email" placeholder="email" required>
+      <input class="form-control" [(ngModel)] ="email" placeholder="example@email.com" type="email" ngModel name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input class="form-control" [(ngModel)] ="username" type="text" placeholder="username" ngModel name="username" required>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input class="form-control" type="password" ngModel  name="password" placeholder="password" required>
+      <input class="form-control" type="password" [(ngModel)] ="password" placeholder="password" ngModel  name="password" required>
     </div>
     <div class="form-group">
-      <label for="confirmPassword">Confirm password</label>
-      <input class="form-control" type="password" ngModel name="confirmPassword" placeholder="confirm password">
+      <label for="passwordConfirmation">Confirm password</label>
+      <input class="form-control" [(ngModel)] ="passwordConfirmation" type="password" placeholder="password confirmation" ngModel name="confirmPassword" required>
     </div>
-    <input type="button" class="btn btn-primary btn-block" value="Register">
+    <button class="btn btn-block btn-primary" [disabled]="!registerForm.valid">Register</button>
     <small class="text-center"><p>By clicking register you agree to Beautify's <a [routerLink]="['/routePath']">Terms & Conditions</a></p></small>
     </form>
   </div>
